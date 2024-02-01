@@ -10,8 +10,14 @@ class SimulationService {
     this.socket.addEventListener('message', (event) => {
       try {
         const data = JSON.parse(event.data);
-        console.log("Received positions: " + data.jointPositions);
-        this.updateJointPositions(data.jointPositions);
+        console.log("Received positions:", data.positions);
+
+        // Iterate over incoming data
+        for (let i = 0; i < data.positions.length; i++) {
+          console.log(`Joint ${i + 1} position:`, data.positions[i]);
+        }
+
+        this.updateJointPositions(data.positions);
       } catch (error) {
         console.error('Error parsing WebSocket message:', error);
       }
