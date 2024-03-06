@@ -98,7 +98,7 @@ const RobotRenderer = ({ openedURDF }) => {
         const jointPositions = simulationService.getJointPositions();
         if (robot && Object.keys(jointPositions).length > 0) {
           // Iterating from 1 due to Joint0 being the responsible for the base
-          for(let i = 1; i < Object.keys(robot.joints).length; i++){
+          for(let i = 0; i < Object.keys(robot.joints).length; i++){
             robot.joints[Object.keys(robot.joints)[i]].setJointValue(jointPositions[i]);
           }
         }

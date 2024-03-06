@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import './Toolbar.css';
+import simulationService from '../services/SimulationService';
 
 const Toolbar = ({ onOpenURDF, onStartSimulation, onStopSimulation }) => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -23,8 +24,10 @@ const Toolbar = ({ onOpenURDF, onStartSimulation, onStopSimulation }) => {
     <div className="toolbar">
       <button onClick={openModal}>Load URDF</button>
       <input type="file" id="urdfFileInput" accept=".urdf" style={{ display: 'none' }} />
-      <button onClick={onStartSimulation}>Start</button>
-      <button onClick={onStopSimulation}>Stop</button>
+      <button onClick={simulationService.startSimulation}>Start</button>
+      <button onClick={simulationService.stopSimulation}>Stop</button>
+      <button onClick={simulationService.resetSimulation}>Reset</button>
+      <button onClick={simulationService.closeWebSocket}>Close connection</button>
 
       {/* Modal Dialog for Opening URDF */}
       <Modal
