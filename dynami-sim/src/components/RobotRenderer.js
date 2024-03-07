@@ -74,8 +74,8 @@ const RobotRenderer = ({ openedURDF }) => {
 
       // Set up camera and lights
       camera.position.set(0, 0, 5); // Adjust camera position
-      scene.add(new THREE.AmbientLight(0x404040)); // Add ambient light
-      const directionalLight = new THREE.DirectionalLight(0xffffff, 3);
+      scene.add(new THREE.AmbientLight(0x404040, 3)); // Add ambient light
+      const directionalLight = new THREE.DirectionalLight(0xffffff, 5);
       directionalLight.position.set(5, 5, 5); // Adjust light position
       scene.add(directionalLight);
 
