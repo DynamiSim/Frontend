@@ -1,17 +1,18 @@
 .sidebar {
-    background-color: #f2f2f2;
+    background-color: #f5f2f0;
     padding: 1em;
-    height: 100vh;
-    width: 200px;
+    height: 100%;
+    width: 60vw;
     position: fixed;
     left: 0;
     top: 60px;
     transition: left 0.3s ease-out;
     z-index: 1; /* Set a z-index for the sidebar */
+    overflow: hidden;
   }
   
   .sidebar.collapsed {
-    left: -200px;
+    left: -60vw;
   }
   
   .collapse-button {
@@ -21,5 +22,19 @@
     cursor: pointer;
     font-size: 1.5em;
     z-index: 2; /* Set a higher z-index for the collapse button */
+    /*color: #f2f2f2;*/
+  }
+
+  .urdf-container {
+    scrollbar-width: none;
+    height: 90%;
+    box-sizing: content-box;
+    padding-right: 17px;
+    overflow-y: scroll;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
   }
   

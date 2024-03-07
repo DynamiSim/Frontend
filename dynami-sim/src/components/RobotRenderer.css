@@ -1,4 +1,6 @@
 .robot-renderer {
-    margin: 1em;
+    width: 100%;
+    height:min-content;
+    overflow: hidden;
   }
   

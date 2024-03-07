@@ -17,7 +17,7 @@ const RobotRenderer = ({ openedURDF }) => {
 
     if (openedURDF) {
       const scene = new THREE.Scene();
-      scene.background = new THREE.Color(0x333333);
+      scene.background = new THREE.Color(0x2b2b2b);
       const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.01, 1000);
       const renderer = new THREE.WebGLRenderer({ antialias: true });
       const controls = new OrbitControls(camera, renderer.domElement);
